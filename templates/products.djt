@@ -1,0 +1,47 @@
+{% extends 'base.djt' %}
+
+{% block content %}
+
+{% for item in object_list %}
+<!--Grid column-->
+<div class="col-lg-3 col-md-6 mb-4">
+    <!--Card-->
+    <div class="card">
+
+        <!--Card image-->
+        <div class="view overlay">
+        <img src="" class="card-img-top" alt="...">
+        <a>
+            <div class="mask rgba-white-slight"></div>
+        </a>
+        </div>
+        <!--Card image-->
+
+        <!--Card content-->
+        <div class="card-body text-center">
+        <!--Category & Title-->
+        <a href="" class="grey-text">
+            <h5>Beverage</h5>
+        </a>
+        <h5>
+            <strong>
+            <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title }}
+                <span class="badge badge-pill primary-color">Best Seller</span>
+            </a>
+            </strong>
+        </h5>
+
+        <h4 class="font-weight-bold blue-text">
+            <strong>{{ item.price }}</strong>
+        </h4>
+
+        </div>
+        <!--Card content-->
+
+    </div>
+    <!--Card-->
+</div>
+<!--Grid column-->
+{% endfor %}
+
+{% endblock content %}
